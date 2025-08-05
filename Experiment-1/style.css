@@ -4,6 +4,7 @@
     background-color: antiquewhite;
     flex-direction: column;
     justify-content: space-around;
+    
    
      
 }
@@ -23,8 +24,8 @@ form{
     border-radius: 10px;
     padding: 50px;
     margin: 160px;
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    flex-direction: column; 
     
     
 }
