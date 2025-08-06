@@ -1,0 +1,84 @@
+
+ADMIN DASHBOARD FUNCTIONALITY & STYLING OVERVIEW
+
+1. FEATURE: Dark Mode Toggle
+The dashboard includes a dark mode switch, allowing users to toggle between light and dark themes using a 
+checkbox at the top left of the screen. When the checkbox is selected, CSS variables change the colors of 
+ the header,  sidebar, main content, and footer to darker shades. 
+
+2. PAGE STRUCTURE (HTML Overview)
+The HTML structure consists of:
+- A dark mode checkbox input and its label
+- A container <div> with class "dashboard" that wraps all content
+- A header for the title
+- A sidebar navigation with links to "Home", "User", and "Settings"
+- A main section with a welcome message
+- A footer with a copyright
+
+3. CSS LAYOUT USING GRID
+The layout is controlled by CSS Grid. The page is divided into three rows:
+- Row 1: Header (spans both columns)
+- Row 2: Sidebar and Main content
+- Row 3: Footer (spans both columns)
+
+Columns are defined as:
+- First column: Fixed width of 200px for the sidebar
+- Second column: Takes the remaining width for main content
+
+Each section is explicitly placed using grid-row and grid-column properties instead of named grid areas.
+
+4. COLOR SCHEME
+Light Mode (default):
+- Header: lightseagreen
+- Sidebar: lightgray
+- Main: white
+- Footer: orangered
+- Text: black
+
+Dark Mode (when toggled):
+- Header, Sidebar, Main: black
+- Footer: dimgray
+- Text: white
+
+
+5. CSS GRID STRUCTURE
+
+The dashboard uses a 2-column, 3-row grid layout:
+
++---------------------------+---------------------------+
+|         HEADER (row 1, column 1-2 spans full width)   |
++---------------------------+---------------------------+
+| SIDEBAR (row 2, col 1)    | MAIN CONTENT (row 2, col 2)|
++---------------------------+---------------------------+
+|         FOOTER (row 3, column 1-2 spans full width)   |
++---------------------------+---------------------------+
+
+- Columns:
+  - Column 1: Fixed width (200px) for the sidebar
+  - Column 2: Flexible width for the main content
+
+- Rows:
+  - Row 1: Height adjusts based on header content
+  - Row 2: Fills remaining vertical space for content
+  - Row 3: Footer with auto height
+
+This approach gives a clean, responsive layout where each section stays in place.
+ Instead of using grid-area names, grid positioning is handled using:
+    grid-row: [row number];
+    grid-column: [column start / span];
+
+This technique makes the layout straightforward and easy to maintain.
+6. STYLING NOTES
+- The layout uses modern CSS Grid for positioning.
+- The dark mode is implemented using CSS variables, making it easy to manage and extend.
+- All colors are defined using color names instead of hex codes.
+- The toggle switch and label are positioned at the top left of the page.
+- Navigation links are stacked vertically with spacing for readability.
+- The main area has a light border on the left to separate it from the sidebar.
+
+LEARNING OUTCOMES
+- How to use CSS Grid with explicit row/column span positioning.
+- How to implement a dark mode toggle using only CSS.
+- How to use CSS variables to manage theme-related styles.
+- Clear separation of concerns between HTML content and CSS styling.
+

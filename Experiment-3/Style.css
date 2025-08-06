@@ -1,60 +1,86 @@
+:root {
+  --bg-color-header: green;
+  --bg-color-sidebar: lightgray;
+  --bg-color-main: white;
+  --bg-color-footer: green;
+  --text-color: black;
+}
+
+
+#darkModeToggle:checked ~ .dashboard {
+  --bg-color-header: black;
+  --bg-color-sidebar: black;
+  --bg-color-main: black;
+  --bg-color-footer: dimgray;
+  --text-color: white;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 200px 1fr;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-}
-header{
-  grid-area: header;
-    background-color: #4CAF50;
-    color: white;
-     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav{
- grid-area: sidebar;
-    background-color: #f4f4f4;
-    padding: 20px;
-    gap: 100px;
-}
-main{
-border: 1px solid black;
-background-color: white;
- grid-area: main;
-    padding: 20px;
-}
-  footer{
-border: 1px solid black;
-background-color: green;
-grid-column: 1/span 2;
-text-align: center;
-
-  }
-.sidebar{
-    width: 200px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    position: fixed;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-  gap: 100px;
-           
-
-}
-.p{
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    color: #333333;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
+#darkModeToggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.switch {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dashboard {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr;
+  color: var(--text-color);
+}
+
+
+header {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  background-color: var(--bg-color-header);
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: var(--bg-color-sidebar);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+main {
+  grid-row: 2;
+  grid-column: 2;
+  background-color: var(--bg-color-main);
+  padding: 20px;
+  border-left: 1px solid gray;
+}
+
+footer {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+  background-color: var(--bg-color-footer);
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
