@@ -1,4 +1,4 @@
-LIVE CHARACTER COUNTER FUNCTIONALITY & STYLING OVERVIEW
+LIVE CHARACTER COUNTER FUNCTIONALITY, STYLING & JAVASCRIPT CONCEPTS OVERVIEW
 
 1. FEATURE: Character Counting
 - The counter updates in real-time as users type in the textarea.
@@ -27,7 +27,14 @@ Styling Notes:
 - Padding for readability.
 - Bold character count.
 
-5. TEST CASE DISTRIBUTION
+5. JAVASCRIPT CONCEPTS USED
+- **DOM Manipulation**: `document.getElementById()` is used to access textarea and counter span.
+- **Event Handling**: `oninput` event triggers the function whenever user types, deletes, or pastes text.
+- **String Property**: `.value.length` is used to get the current number of characters in the textarea.
+- **Updating Content**: `.textContent` is used to dynamically update the span with the latest count.
+- **Real-time Interactivity**: The logic runs instantly without requiring form submission.
+
+6. TEST CASE DISTRIBUTION
 
 Test Case ID | Input            | Expected Count | Notes
 ------------------------------------------------------------
@@ -40,8 +47,9 @@ TC-6         | @#$%             | 4              | Special characters counted
 TC-7         | Hello\nWorld     | 11             | Newline counts as 1 character
 TC-8         | Paste 100 chars  | 100            | Stress test
 
-LEARNING OUTCOMES
+7. LEARNING OUTCOMES
 1. How to implement live DOM updates with JavaScript.
 2. How to style responsive input areas with CSS.
 3. How character counting works with spaces, symbols, and newlines.
 4. How to organize code by separating HTML, CSS, and JavaScript files.
+5. How JavaScript event handling and DOM manipulation connect HTML and CSS to create interactive features.
