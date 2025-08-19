@@ -1,0 +1,47 @@
+LIVE CHARACTER COUNTER FUNCTIONALITY & STYLING OVERVIEW
+
+1. FEATURE: Character Counting
+- The counter updates in real-time as users type in the textarea.
+- It counts all characters including spaces, numbers, and symbols.
+- Implemented using JavaScript 'oninput' event.
+
+2. PAGE STRUCTURE (HTML Overview)
+The HTML structure consists of:
+- A container <div> that wraps the textarea and the counter display
+- A <textarea> for user input
+- A <div> showing "Character count:" followed by a <span> that displays the number
+
+3. CSS LAYOUT
+- Textarea spans full width with padding.
+- Character count is styled bold.
+- Responsive layout: textarea resizes with screen width.
+
+4. COLOR SCHEME & STYLING NOTES
+Default Light Mode:
+- Background: white
+- Border: light gray around textarea
+- Text: black
+
+Styling Notes:
+- Uses width: 100% for responsiveness.
+- Padding for readability.
+- Bold character count.
+
+5. TEST CASE DISTRIBUTION
+
+Test Case ID | Input            | Expected Count | Notes
+------------------------------------------------------------
+TC-1         | (empty)          | 0              | Initial state
+TC-2         | A                | 1              | Single character
+TC-3         | Hello            | 5              | Word without space
+TC-4         | Hello World      | 11             | Space included
+TC-5         | 123456           | 6              | Numbers counted
+TC-6         | @#$%             | 4              | Special characters counted
+TC-7         | Hello\nWorld     | 11             | Newline counts as 1 character
+TC-8         | Paste 100 chars  | 100            | Stress test
+
+LEARNING OUTCOMES
+1. How to implement live DOM updates with JavaScript.
+2. How to style responsive input areas with CSS.
+3. How character counting works with spaces, symbols, and newlines.
+4. How to organize code by separating HTML, CSS, and JavaScript files.
