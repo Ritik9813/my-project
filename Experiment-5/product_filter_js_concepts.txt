@@ -1,0 +1,72 @@
+DYNAMIC PRODUCT FILTER FUNCTIONALITY & STYLING OVERVIEW
+
+1. FEATURE: Category Filter Dropdown
+- The project allows users to filter products dynamically using a dropdown menu.
+- Categories include All, Clothing, Electronics, and Books.
+- Selecting a category immediately updates the product list without reloading the page.
+
+2. PAGE STRUCTURE (HTML Overview)
+- The page has a container that holds all content.
+- A heading is used to title the section ("Product List").
+- A label and dropdown appear at the top to select categories.
+- A table is used to list products in two columns: Product Name and Category.
+- Each product row is linked to its category using a data-category attribute.
+
+3. CSS LAYOUT & STYLING
+- The container is styled with a thin black border, padding, and white background.
+- The dropdown has padding and a light border for neatness.
+- The table uses border-collapse to create clean grid lines.
+- Table headers are styled with a light gray background.
+- Rows have a consistent border and spacing for readability.
+
+4. COLOR SCHEME
+- Container Background: White
+- Outer Border: Black
+- Table Cell Borders: Light gray
+- Header Background: Light gray
+- Text: Black
+
+5. PAGE VISUAL LAYOUT (Simplified)
+
++----------------------------------------------------+
+|                PRODUCT LIST                        |
++----------------------------------------------------+
+| Filter by Category: [Dropdown ▼]                   |
++----------------------------------------------------+
+| TABLE                                              |
+| +----------------+-------------------------------+ |
+| | Product Name   | Category                      | |
+| +----------------+-------------------------------+ |
+| | Example Item   | Clothing/Electronics/Books    | |
++----------------------------------------------------+
+
+6. FILE DISTRIBUTION
+- index.html → Contains the structure of the page: container, heading, dropdown, and product table.
+- style.css → Defines the layout and visual styling: borders, colors, table formatting, and dropdown styling.
+- script.js → Provides interactivity: listens to dropdown changes and shows/hides products dynamically based on category.
+EVENT LISTENERS
+- The JavaScript uses an event listener attached to the dropdown (select element).
+- The "change" event is triggered whenever the user selects a different category.
+- This event listener calls a function that applies the filtering logic.
+
+7. DOM SELECTION
+- JavaScript selects the dropdown element using getElementById("category").
+- Product rows inside the table are selected using querySelectorAll("tbody tr").
+- Each row is linked to a category using the custom attribute data-category.
+
+8. DATA ATTRIBUTES
+- The products are categorized using HTML data attributes (example: data-category="clothing").
+- In JavaScript, these values can be accessed through row.dataset.category.
+- This technique allows a clean separation of content (HTML) and logic (JavaScript).
+
+9. CONDITIONAL LOGIC
+- When the user changes the dropdown selection, JavaScript checks the selected value.
+- If the value is "all", all rows are displayed.
+- Otherwise, each row is compared against the selected category and only matching rows remain visible.
+
+
+10. LEARNING OUTCOMES
+- Understand how to use a dropdown to filter data dynamically.
+- Learn to use data attributes (data-category) for classification.
+- Practice clean file separation between HTML, CSS, and JavaScript.
+- Apply user-friendly table formatting for clarity.
