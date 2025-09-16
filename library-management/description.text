@@ -1,0 +1,75 @@
+1. FEATURE: Library Book Management Component
+
+The application provides a dedicated Library Management component where users can view, add, and manage books.
+
+Each book entry typically includes details such as Title, Author, and Availability.
+
+The component is modular, built with React (LibraryManagement.js and LibraryManagement.css), making it reusable and maintainable.
+
+The UI ensures users can easily track book records in a structured way.
+
+2. PAGE STRUCTURE (React Component Overview)
+
+The React component structure consists of:
+
+- A main wrapper <div> with a class for layout and styling.
+- A header <h2> displaying “Library Management System” (or similar title).
+- Input fields (like text boxes or dropdowns) to add new books or search existing ones.
+- A <table> that organizes book records in rows with columns such as Book Title, Author, Status (Available / Issued).
+- Buttons for user actions like Add, Edit, or Delete books.
+
+3. CSS LAYOUT & STYLING
+
+The design follows a clean and professional layout:
+
+- Container box with padding and a subtle border for separation.
+- Tables styled with border-collapse: collapse for neat rows and columns.
+- Table headers highlighted with a background color for better readability.
+- Input fields and buttons styled consistently to maintain a smooth user experience.
+- Responsive adjustments allow the UI to work on various screen sizes.
+
+4. COLOR SCHEME
+
+- Container Background: White (for clarity).
+- Borders: Light gray for table cells, darker borders for main sections.
+- Table Header Background: Soft gray (#f5f5f5).
+- Buttons: Contrasting color (e.g., blue or green) to stand out.
+- Text: Default black for maximum readability.
+
+5. PAGE STRUCTURE VISUALIZATION
+
++----------------------------------------------------+
+|        LIBRARY MANAGEMENT SYSTEM (h2)              |
++----------------------------------------------------+
+| Add New Book: [Title Input] [Author Input] [Save]  |
++----------------------------------------------------+
+| BOOK LIST (TABLE)                                  |
+| +----------------+-------------------+-----------+ |
+| | Title          | Author            | Status    | |
+| +----------------+-------------------+-----------+ |
+| | The Alchemist  | Paulo Coelho      | Available | |
+| | Atomic Habits  | James Clear       | Issued    | |
+| | Data Science   | John Smith        | Available | |
++----------------------------------------------------+
+
+6. FILE DISTRIBUTION
+
+src/components/LibraryManagement.js
+- React component implementing the library UI (form + table).
+- Handles state for managing books (add, remove, update).
+
+src/components/LibraryManagement.css
+- Styles specific to the Library Management UI (container, table, buttons).
+
+App.js
+- Imports and renders the LibraryManagement component.
+
+index.js
+- React entry point that renders <App /> into the DOM.
+
+7. LEARNING OUTCOMES
+
+- How to structure a modular React component.
+- Managing UI state (like books list) in React.
+- Clean separation of concerns with JS (logic), CSS (styling), and JSX (structure).
+- Designing a user-friendly CRUD table layout.

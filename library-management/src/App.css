@@ -1,0 +1,93 @@
+/* Global / App styles */
+:root{
+  --container-border: #000;
+  --muted: #666;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  background: #fff;
+  color: #222;
+}
+
+/* Container similar to screenshot */
+.app-root {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Provide spacing inside the component */
+.library-container {
+  border: 2px solid var(--container-border);
+  padding: 18px;
+  border-radius: 4px;
+  background: white;
+}
+
+/* Title */
+.library-container h2 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+}
+
+/* Inputs row */
+.controls {
+  margin-bottom: 12px;
+}
+
+/* Inputs & buttons */
+input[type="text"] {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  margin-right: 8px;
+  min-width: 180px;
+}
+
+input.search {
+  width: 60%;
+  display: block;
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 7px 12px;
+  border: 1px solid #999;
+  background: #f3f3f3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(0.98); }
+
+/* Book list */
+.book-list {
+  margin-top: 12px;
+}
+
+.book-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.01);
+}
+
+.book-info strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Remove button aligned to right */
+.book-actions {
+  margin-left: 16px;
+}
+
+.no-results {
+  color: var(--muted);
+  padding: 10px 6px;
+}
