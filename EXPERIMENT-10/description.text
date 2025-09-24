@@ -1,0 +1,67 @@
+EMPLOYEE MANAGEMENT SYSTEM (CLI) FUNCTIONALITY & FLOW OVERVIEW
+
+1. FEATURE: Menu-Driven CLI Application
+
+The program provides an interactive menu in the terminal where users can:
+
+Add a new employee
+List all employees
+Remove an employee by ID
+Exit the program
+
+The menu is displayed after each operation, ensuring continuous interaction until the user chooses to exit.
+
+2. APPLICATION STRUCTURE (Node.js Overview)
+
+The application is structured around:
+
+readline module: Used to take input/output from the terminal.
+employees array: Stores employee objects with id and name.
+Functions: Each operation (add, list, remove) is encapsulated in its own function for clarity.
+
+Functions included:
+showMenu() → Displays the main menu.
+addEmployee() → Collects ID and name, pushes data into the array.
+listEmployees() → Displays all stored employees.
+removeEmployee() → Removes an employee by ID.
+
+3. PROGRAM FLOW (Step-by-Step)
+
+Start: Application begins by calling showMenu().
+User Input: User chooses an option (1–4).
+If 1 → Add Employee: Prompts for ID and Name, then stores the record.
+If 2 → List Employees: Prints all employees stored in the array.
+If 3 → Remove Employee: Prompts for ID, searches, and removes if found.
+If 4 → Exit: Ends the program.
+Loop: After each action, the menu is shown again until the user exits.
+
+4. DATA STRUCTURE
+
+Employees are stored in an array of objects:
+
+[
+  { id: "101", name: "John" },
+  { id: "102", name: "Alice" }
+]
+
+This simple in-memory approach makes it easy to add, view, and delete data but does not persist after program exit.
+
+5. USER EXPERIENCE (Terminal Interaction)
+
+Clear menu options displayed with numbers (1–4).
+Input is taken step by step for clarity.
+Success/error messages are printed after each operation (e.g., "Employee added successfully!", "Employee not found!").
+Continuous looping provides a smooth CLI workflow.
+
+6. LIMITATIONS
+
+Data is not persistent (lost after program exits).
+Only stores ID and Name (no additional employee details like department, salary, etc.).
+Employee ID uniqueness is not enforced.
+
+LEARNING OUTCOMES
+
+How to build a menu-driven CLI using Node.js readline.
+How to manage data using arrays and objects.
+Understanding CRUD basics (Create, Read, Delete in this case).
+How to design a simple but reusable CLI program structure.
