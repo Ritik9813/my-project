@@ -1,0 +1,98 @@
+# PRODUCT MANAGEMENT SYSTEM (API)
+
+## FUNCTIONALITY & FLOW OVERVIEW
+
+### 1. FEATURE: RESTful JSON API
+
+The program provides a fully functional REST API to manage products where users can:
+
+* Create a new product
+* List all products
+* Get a product by ID
+* Update a product by ID
+* Delete a product by ID (supports soft delete optional)
+
+All interactions are handled through JSON requests and responses, making it suitable for Postman, curl, or frontend apps like React/Vue.
+
+### 2. APPLICATION STRUCTURE (Node.js + Express + MongoDB Overview)
+
+The application is structured around:
+
+* **Express**: Handles HTTP requests and routing.
+* **Mongoose**: Connects to MongoDB and defines the Product schema.
+* **Product Model**: Stores products with `name`, `price`, `category`, and optional `deletedAt` for soft deletes.
+* **Routes**: Each CRUD operation has a dedicated route.
+
+**Functions / Endpoints included:**
+
+| Method | Endpoint                | Description                                   |
+| ------ | ----------------------- | --------------------------------------------- |
+| POST   | `/api/products`         | Create a new product                          |
+| GET    | `/api/products`         | Get all products                              |
+| GET    | `/api/products/:id`     | Get a product by ID                           |
+| PUT    | `/api/products/:id`     | Update a product by ID                        |
+| DELETE | `/api/products/:id`     | Delete a product by ID (soft delete optional) |
+| GET    | `/api/products/deleted` | Get all deleted products (soft delete)        |
+
+### 3. PROGRAM FLOW (Step-by-Step)
+
+1. **Start**: Server starts by connecting to MongoDB and listening on the specified port.
+2. **User Interaction**: API requests are made via HTTP (Postman, curl, or frontend).
+3. **Create Product**:
+
+   * Send POST request with JSON body: `{ name, price, category }`.
+   * Product is saved in MongoDB.
+4. **List Products**:
+
+   * GET request retrieves all products from database.
+5. **Get Product by ID**:
+
+   * GET request with a product ID retrieves that specific product.
+6. **Update Product**:
+
+   * PUT request with product ID and JSON body updates the product.
+7. **Delete Product**:
+
+   * DELETE request marks the product as deleted (soft delete) or removes it completely.
+8. **Get Deleted Products**:
+
+   * GET request on `/api/products/deleted` retrieves all soft-deleted products.
+
+### 4. DATA STRUCTURE
+
+Products are stored in MongoDB as documents:
+
+```json
+{
+  "_id": "68dd46111df69b8b7662ed20",
+  "name": "Apple",
+  "price": 120,
+  "category": "Fruit",
+  "deletedAt": null,
+  "createdAt": "2025-10-01T15:00:00.000Z",
+  "updatedAt": "2025-10-01T15:20:00.000Z"
+}
+```
+
+* `deletedAt` is `null` for active products and contains timestamp for soft-deleted products.
+
+### 5. USER EXPERIENCE (API Interaction)
+
+* Clear RESTful endpoints with intuitive HTTP methods (GET, POST, PUT, DELETE).
+* JSON responses include either the requested data or informative error messages (`Product not found`, `Invalid ID`).
+* Soft delete functionality allows retrieval of deleted items.
+* Suitable for integration with any frontend framework or testing via Postman/curl.
+
+### 6. LIMITATIONS
+
+* Soft delete is optional; hard deletes permanently remove data.
+* No authentication/authorization (anyone can access the API).
+* Only basic product fields (`name`, `price`, `category`); no advanced attributes like stock, supplier, etc.
+
+## LEARNING OUTCOMES
+
+* How to build a **CRUD REST API** using Node.js, Express, and MongoDB.
+* Understanding **Mongoose schemas, models, and validations**.
+* Learning **soft delete vs hard delete** in databases.
+* How to structure API routes for **clear and maintainable code**.
+* Experience working with **JSON requests/responses** for web APIs.
